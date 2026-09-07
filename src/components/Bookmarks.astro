@@ -94,6 +94,10 @@
     slugBadge.textContent = bookmark.slug;
     slugBadge.title = formatBookmark(bookmark);
 
+    const separator = document.createElement('span');
+    separator.className = 'separator';
+    separator.textContent = ' :: ';
+
     const copyButton = document.createElement('button');
     copyButton.type = 'button';
     copyButton.className = 'copy';
@@ -111,7 +115,7 @@
       }
     });
 
-    item.append(link, slugBadge, copyButton);
+    item.append(link, separator, slugBadge, copyButton);
     return item;
   }
 
